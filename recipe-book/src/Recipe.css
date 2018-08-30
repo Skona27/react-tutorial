@@ -1,0 +1,41 @@
+.card {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 16px;
+    min-width: 240px;
+    box-shadow: 0 2px 2px 5px rgba(0,0,0, .2);
+    background-color: #efefef;
+}
+
+.card__header {
+    overflow: hidden;
+    height: 50%;
+}
+
+.card__img {
+    height: 100%;
+}
+
+.card__body {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+
+.card__title {
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.card__bold {
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,28 @@
+.card {
+    width: 680px;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.card__header {
+    font-weight: 400;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.card__list {
+    list-style: none;
+    text-align: center;
+}
+
+.card__item {
+    padding-bottom: 8px;
+}

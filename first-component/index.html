@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+    </div>
+
+    <script type="text/babel">
+        class MyComp extends React.Component {
+            render() {
+                // change styles on load
+                const randomSize = Math.random() + 1.9;
+                const headerStyle = {fontSize: `${randomSize}rem`};
+
+                const backgroundsArr = ["blue", "yellowgreen", "purple", "violet"];
+                const randomBackground = backgroundsArr[Math.floor(Math.random()*4)];
+                const bgColor = {backgroundColor: `${randomBackground}`};
+
+                return (
+                    <div className="card" style={bgColor}>
+                        <h2 className="card__header" style={headerStyle}>My first React component</h2>
+                        <ul className="card__list">
+                            <li className="card__item">This is my first React Component</li>
+                            <li className="card__item">This is so easy!</li>
+                        </ul>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+          <MyComp/>,
+          document.getElementById('app')
+        );
+      </script>
+</body>
+</html>
