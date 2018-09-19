@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Recipe from "./Recipe";
+
 import Navbar from "./Navbar";
 import RecipeList from "./RecipeList";
+import RecipeInput from "./RecipeInput";
 
 class App extends Component {
   constructor(props) {
@@ -32,14 +33,30 @@ class App extends Component {
             img: "spaghetti.jpg"
         }
       ],
-      nextId: 4
+      nextId: 4,
+      showForm: false,
     };
+    
+    this.handleSave = this.handleSave.bind(this);
+  }
+  
+  handleSave(recipe) {
+   this.setState((prevState, props) => {
+     const newRecipe = {...recipe, id: this.state.nextRecipeId};
+     return {
+       nextRecipeId: prevState.nextId + 1,
+       recipes: [...this.state.recipes, newRecipe]
+     }
+   });
   }
 
   render() {
+    const {showForm} = this.state;
+    
     return (
       <div className="App">
-        <Navbar />
+        <Navbar onNewRecipe={() => this.setState({showForm: true})} />
+        {showForm ? <RecipeInput onSave={this.handleSave} onClose={() => this.setState({showForm: false})} /> : null}
         <RecipeList recipes={this.state.recipes} />
       </div>
     );

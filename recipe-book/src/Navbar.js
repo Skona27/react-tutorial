@@ -7,10 +7,7 @@ class Navbar extends Component {
             <header className="header">
                 <h2>Recipe App</h2>
                 <nav className="header__nav">
-                    <li className="header__item"><a href="#" className="header__link">Home</a></li>
-                    <li className="header__item"><a href="#" className="header__link">About</a></li>
-                    <li className="header__item"><a href="#" className="header__link">More</a></li>
-                    <li className="header__item"><a href="#" className="header__link">Contact</a></li>
+                    <li className="header__item"><a onClick={this.props.onNewRecipe} className="header__link">New Recipe</a></li>
                 </nav>
             </header>
         )

@@ -24,4 +24,4 @@ class Recipe extends Component {
     }
 }
 
-export default Recipe
+export default Recipe;
